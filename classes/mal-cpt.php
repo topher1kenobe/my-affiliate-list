@@ -94,7 +94,7 @@ class My_Affiliate_List_CPT {
 		$rewrite = array(
 			'slug'					=> 'affiliates',
 			'with_front'			=> true,
-			'pages'					=> true,
+			'pages'					=> false,
 			'feeds'					=> true,
 		);
 		$args = array(
