@@ -4,7 +4,6 @@
  * Instantiate the My_Affiliate_List_CPT instance
  * @since My_Affiliate_List_CPT 1.0
  */
-add_action( 'init', [ 'My_Affiliate_List_CPT', 'instance' ] );
 
 class My_Affiliate_List_CPT {
 
@@ -48,9 +47,9 @@ class My_Affiliate_List_CPT {
 	 * @access private
 	 * @return void
 	 */
-	private function setup() {
+	public function setup() {
 
-		add_action( 'init', array( $this, 'affiliate_cpt' ), 0 );
+		$this->affiliate_cpt();
 
 	}
 
@@ -73,7 +72,7 @@ class My_Affiliate_List_CPT {
 			'parent_item_colon'		=> __( 'Parent Affiliate:', 'my_affiliates' ),
 			'all_items'				=> __( 'All Affiliates', 'my_affiliates' ),
 			'add_new_item'			=> __( 'Add New Affiliate', 'my_affiliates' ),
-			'add_new'				=> __( 'Add New', 'my_affiliates' ),
+			'add_new'				=> __( 'Add New Affiliate', 'my_affiliates' ),
 			'new_item'				=> __( 'New Affiliate', 'my_affiliates' ),
 			'edit_item'				=> __( 'Edit Affiliate', 'my_affiliates' ),
 			'update_item'			=> __( 'Update Affiliate', 'my_affiliates' ),
@@ -102,12 +101,13 @@ class My_Affiliate_List_CPT {
 			'label'					=> __( 'Affiliate', 'my_affiliates' ),
 			'description'			=> __( 'Intended to be a list of affiliates', 'my_affiliates' ),
 			'labels'				=> $labels,
-			'supports'				=> array( 'title', 'editor', 'revisions', 'page-attributes' ),
+			'supports'				=> array( 'title', 'editor', 'revisions', 'page-attributes', 'thumbnail' ),
 			'hierarchical'			=> true,
 			'public'				=> true,
 			'show_ui'				=> true,
 			'show_in_menu'			=> true,
-			'menu_position'			=> 5,
+			'show_in_rest'			=> true,
+			'menu_position'			=> 25,
 			'menu_icon'				=> 'dashicons-networking',
 			'show_in_admin_bar'		=> true,
 			'show_in_nav_menus'		=> true,
@@ -117,6 +117,7 @@ class My_Affiliate_List_CPT {
 			'publicly_queryable'	=> true,
 			'rewrite'				=> $rewrite,
 			'capability_type'		=> 'page',
+			'taxonomies'            => [ 'affiliate_type' ]
 		);
 		register_post_type( 'my_affiliates', $args );
 
