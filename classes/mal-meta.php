@@ -64,9 +64,9 @@ class My_Affiliate_List_Meta {
 		$prefix = 'mal-';
 
 		$meta_boxes[] = [
-			'title'      => esc_html__( 'Affiliate Links', 'my_affiliates' ),
+			'title'      => esc_html__( 'Affiliate Links', 'my-affiliates' ),
 			'id'         => 'affiliate_links',
-			'post_types' => [ 'my_affiliates' ],
+			'post_types' => [ 'my-affiliates' ],
 			'context'    => 'normal',
 			'priority'   => 'high',
 			'autosave'   => true,
@@ -74,12 +74,12 @@ class My_Affiliate_List_Meta {
 				[
 					'type' => 'text',
 					'id'   => $prefix . 'mal_affiliate_link',
-					'name' => esc_html__( 'Affiliate Link', 'my_affiliates' ),
+					'name' => esc_html__( 'Affiliate Link', 'my-affiliates' ),
 				],
 				[
 					'type' => 'text',
 					'id'   => $prefix . 'mal_affiliate_admin',
-					'name' => esc_html__( 'Link Admin', 'my_affiliates' ),
+					'name' => esc_html__( 'Link Admin', 'my-affiliates' ),
 				],
 			],
 		];

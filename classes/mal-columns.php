@@ -49,8 +49,8 @@ class My_Affiliate_List_Columns {
 	 */
 	public function setup() {
 
-		add_filter( 'manage_my_affiliates_posts_columns', [ $this, 'affiliate_columns' ], 1 );
-		add_action( 'manage_my_affiliates_posts_custom_column', [ $this, 'link_column' ], 10, 2);
+		add_filter( 'manage_my-affiliates_posts_columns', [ $this, 'affiliate_columns' ], 1 );
+		add_action( 'manage_my-affiliates_posts_custom_column', [ $this, 'link_column' ], 10, 2);
 
 	}
 
@@ -65,10 +65,10 @@ class My_Affiliate_List_Columns {
 		unset( $columns['taxonomy-affiliate_type'] );
 		unset( $columns['date'] );
 
-		$columns['image']                   = __( 'Image',  'my_affiliates' );
-		$columns['mal-mal_affiliate_link']  = __( 'Link',   'my_affiliates' );
-		$columns['mal-mal_affiliate_admin'] = __( 'Admin',  'my_affiliates' );
-		$columns['taxonomy-affiliate_type'] = __( 'Types',  'my_affiliates' );
+		$columns['image']                   = __( 'Image',  'my-affiliates' );
+		$columns['mal-mal_affiliate_link']  = __( 'Link',   'my-affiliates' );
+		$columns['mal-mal_affiliate_admin'] = __( 'Admin',  'my-affiliates' );
+		$columns['taxonomy-affiliate_type'] = __( 'Types',  'my-affiliates' );
 	  
 		return $columns;
   
@@ -92,7 +92,7 @@ class My_Affiliate_List_Columns {
 			if ( ! $link ) {
 				_e( 'n/a' );  
 			} else {
-				echo '<a href="' . esc_url( $link ) . '">' . __( 'Link', 'my_affiliates' ) . '</a>';
+				echo '<a href="' . esc_url( $link ) . '">' . __( 'Link', 'my-affiliates' ) . '</a>';
 			}
 		}
 
@@ -102,7 +102,7 @@ class My_Affiliate_List_Columns {
 			if ( ! $admin ) {
 				_e( 'n/a' );  
 			} else {
-				echo '<a href="' . esc_url( $admin ) . '">' . __( 'Admin', 'my_affiliates' ) . '</a>';
+				echo '<a href="' . esc_url( $admin ) . '">' . __( 'Admin', 'my-affiliates' ) . '</a>';
 			}
 		}
 
@@ -112,7 +112,7 @@ class My_Affiliate_List_Columns {
 			if ( ! $types ) {
 				_e( 'n/a' );  
 			} else {
-				echo '<a href="' . esc_url( $types ) . '">' . __( 'Admin', 'my_affiliates' ) . '</a>';
+				echo '<a href="' . esc_url( $types ) . '">' . __( 'Admin', 'my-affiliates' ) . '</a>';
 			}
 		}
 	}

@@ -5,7 +5,7 @@ Description: Creates a customs post type to hold all of your affliate relationsh
 Version: 1.0
 Author: Topher
 Author URI: http://topher1kenobe.com
-Text Domain: my_affiliates
+Text Domain: my-affiliates
 Domain Path: /languages/
 License: GPLv3+
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -17,7 +17,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  * @since My_Affiliate_List_CPT
  */
 function mal_load_text_domain() {
-	load_plugin_textdomain( 'my_affiliates', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'my-affiliates', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'mal_load_text_domain' );
 

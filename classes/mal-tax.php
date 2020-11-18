@@ -63,26 +63,26 @@ class My_Affiliate_List_Tax {
 	public function affiliate_tax() {
 
 		$labels = array(
-			'name'                       => _x( 'Affiliate Types', 'Taxonomy General Name', 'my_affiliates' ),
-			'singular_name'              => _x( 'Affiliate Type', 'Taxonomy Singular Name', 'my_affiliates' ),
-			'menu_name'                  => __( 'Affiliate Types', 'my_affiliates' ),
-			'all_items'                  => __( 'All Types', 'my_affiliates' ),
-			'parent_item'                => __( 'Parent Type', 'my_affiliates' ),
-			'parent_item_colon'          => __( 'Parent Type:', 'my_affiliates' ),
-			'new_item_name'              => __( 'New Type Name', 'my_affiliates' ),
-			'add_new_item'               => __( 'Add New Type', 'my_affiliates' ),
-			'edit_item'                  => __( 'Edit Type', 'my_affiliates' ),
-			'update_item'                => __( 'Update Type', 'my_affiliates' ),
-			'view_item'                  => __( 'View Type', 'my_affiliates' ),
-			'separate_items_with_commas' => __( 'Separate items with commas', 'my_affiliates' ),
-			'add_or_remove_items'        => __( 'Add or remove items', 'my_affiliates' ),
-			'choose_from_most_used'      => __( 'Choose from the most used', 'my_affiliates' ),
-			'popular_items'              => __( 'Popular Types', 'my_affiliates' ),
-			'search_items'               => __( 'Search Types', 'my_affiliates' ),
-			'not_found'                  => __( 'Not Found', 'my_affiliates' ),
-			'no_terms'                   => __( 'No items', 'my_affiliates' ),
-			'items_list'                 => __( 'Types list', 'my_affiliates' ),
-			'items_list_navigation'      => __( 'Types list navigation', 'my_affiliates' ),
+			'name'                       => _x( 'Affiliate Types', 'Taxonomy General Name', 'my-affiliates' ),
+			'singular_name'              => _x( 'Affiliate Type', 'Taxonomy Singular Name', 'my-affiliates' ),
+			'menu_name'                  => __( 'Affiliate Types', 'my-affiliates' ),
+			'all_items'                  => __( 'All Types', 'my-affiliates' ),
+			'parent_item'                => __( 'Parent Type', 'my-affiliates' ),
+			'parent_item_colon'          => __( 'Parent Type:', 'my-affiliates' ),
+			'new_item_name'              => __( 'New Type Name', 'my-affiliates' ),
+			'add_new_item'               => __( 'Add New Type', 'my-affiliates' ),
+			'edit_item'                  => __( 'Edit Type', 'my-affiliates' ),
+			'update_item'                => __( 'Update Type', 'my-affiliates' ),
+			'view_item'                  => __( 'View Type', 'my-affiliates' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'my-affiliates' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'my-affiliates' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'my-affiliates' ),
+			'popular_items'              => __( 'Popular Types', 'my-affiliates' ),
+			'search_items'               => __( 'Search Types', 'my-affiliates' ),
+			'not_found'                  => __( 'Not Found', 'my-affiliates' ),
+			'no_terms'                   => __( 'No items', 'my-affiliates' ),
+			'items_list'                 => __( 'Types list', 'my-affiliates' ),
+			'items_list_navigation'      => __( 'Types list navigation', 'my-affiliates' ),
 		);
 		$rewrite = array(
 			'slug'                       => 'type',
@@ -100,7 +100,7 @@ class My_Affiliate_List_Tax {
 			'show_in_rest'			     => true,
 			'rewrite'                    => $rewrite,
 		);
-		register_taxonomy( 'affiliate_type', array( 'my_affiliates' ), $args );
+		register_taxonomy( 'affiliate_type', array( 'my-affiliates' ), $args );
 
 	}
 
