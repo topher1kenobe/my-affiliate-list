@@ -88,5 +88,20 @@ class My_Affiliate_List_Meta {
 
 	}
 
+	public static function register_required_plugins() {
+		$plugins = array(
+			array(
+				'name'     => 'Meta Box',
+				'slug'     => 'meta-box',
+				'required' => true,
+			),
+			// More plugins
+		);
+		$config  = array(
+			'id' => 'my-affiliates',
+		)
+		tgmpa( $plugins, $config );
+	}
+
 }
 ?>

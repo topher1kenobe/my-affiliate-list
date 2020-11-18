@@ -12,6 +12,17 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 */
 
 /**
+ * Require metabox.io
+ *
+ * @since My_Affiliate_List_Tax 1.0
+ */
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'classes/class-tgm-plugin-activation.php' ) ) {
+	include_once plugin_dir_path( __FILE__ ) . 'classes/class-tgm-plugin-activation.php';
+	add_action( 'tgmpa_register', 'My_Affiliate_List_Meta::register_required_plugins' );
+}
+
+
+/**
  * Prepare for internationalization
  *
  * @since My_Affiliate_List_CPT
