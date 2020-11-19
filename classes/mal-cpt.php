@@ -63,7 +63,7 @@ class My_Affiliate_List_CPT {
 	public function affiliate_cpt() {
 
 		$labels = array(
-			'name'					=> _x( 'Affialiates', 'Post Type General Name', 'my-affiliates' ),
+			'name'					=> _x( 'Affiliates', 'Post Type General Name', 'my-affiliates' ),
 			'singular_name'			=> _x( 'Affiliate', 'Post Type Singular Name', 'my-affiliates' ),
 			'menu_name'				=> __( 'Affiliates', 'my-affiliates' ),
 			'name_admin_bar'		=> __( 'Affiliates', 'my-affiliates' ),
