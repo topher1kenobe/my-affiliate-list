@@ -21,7 +21,6 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . 'classes/class-tgm-plugin-activa
 	add_action( 'tgmpa_register', 'My_Affiliate_List_Meta::register_required_plugins' );
 }
 
-
 /**
  * Prepare for internationalization
  *
