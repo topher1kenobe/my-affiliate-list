@@ -72,4 +72,37 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . 'classes/mal-meta.php' ) ) {
 	add_action( 'init', array( 'My_Affiliate_List_Meta', 'instance' ) );
 }
 
-?>
+
+add_filter( 'post_type_link', function( $url, $post ) {
+        if ( is_admin() || 'my-affiliates' != $post->post_type ) {
+                return $url;
+        }
+
+        $id = $post;
+        if ( is_object( $post ) ) {
+                $id = $post->ID;
+        }
+
+        $get_url = get_post_meta( $id, 'mal-mal_affiliate_link', true );
+        if ( ! empty( $get_url ) ) {
+                $url = $get_url;
+        }
+        return $url;
+
+}, 99999, 2 );
+
+function mal_pre_sort( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		// Not a query for an admin page.
+		// It's the main query for a front end page of your site.
+
+		if ( is_post_type_archive( 'my-affiliates' ) ) {
+			// Let's change the query for category archives.
+			$query->set( 'posts_per_page', -1 );
+			$query->set( 'nopaging', 1 );
+			$query->set( 'orderby', 'title' );
+			$query->set( 'order', 'ASC' );
+		}
+	}
+}
+add_action( 'pre_get_posts', 'mal_pre_sort' );

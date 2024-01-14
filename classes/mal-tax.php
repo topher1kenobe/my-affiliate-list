@@ -85,7 +85,7 @@ class My_Affiliate_List_Tax {
 			'items_list_navigation'      => __( 'Types list navigation', 'my-affiliates' ),
 		);
 		$rewrite = array(
-			'slug'                       => 'type',
+			'slug'                       => 'affiliate-type',
 			'with_front'                 => true,
 			'hierarchical'               => false,
 		);
@@ -97,7 +97,7 @@ class My_Affiliate_List_Tax {
 			'show_admin_column'          => true,
 			'show_in_nav_menus'          => true,
 			'show_tagcloud'              => true,
-			'show_in_rest'			     => true,
+			'show_in_rest'               => true,
 			'rewrite'                    => $rewrite,
 		);
 		register_taxonomy( 'affiliate_type', array( 'my-affiliates' ), $args );
